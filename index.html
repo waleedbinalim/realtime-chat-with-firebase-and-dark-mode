@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Real Time Chat</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <!-- Light mode switch -->
+        <div class="toggle-instruction">Toggle Dark Mode
+            <br>
+            <br>
+        <div class="switch ">
+            <div class="rectangle active">
+                <div class="inner-circle">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="channels">
+            <ul>
+                <li id="general">General</li>
+                <li id="gaming">Gaming</li>
+                <li id="film">Film</li>
+                <li id="music">Music</li>
+            </ul>
+        </div>
+
+        <!-- Chat Channels -->
+    </div>
+
+    <!-- MAIN CHAT -->
+    <div class="main-chat">
+        <div class="main-chat1">
+            <!-- Chat -->
+            <div class="chats">
+                <div class="message-container">
+                    <div class="name"><strong>Welcome Bot :</strong></div>
+                    <div class="message">
+                        <p>Welcome to this real-time chat application.. <br> <br> 
+                            Well it seems you've not clicked on a channel category. There are
+                            4 channels on your left to choose from. Click on any one to
+                            join the chat in it. Set up your username from the input option
+                            below so people know what to call you. <br> <br> There's also a dark mode
+                            I created just for you. <br><br> Enjoy your time!</p></div>
+                    <div class="time-stamp">
+                        
+                    </div>
+
+                </div>
+                <!-- IGNORE THIS, WAS JUST TO INDICATE A PLACEHOLDER -->
+                <!-- IGNORE THIS, WAS JUST TO INDICATE A PLACEHOLDER -->
+                <!-- IGNORE THIS, WAS JUST TO INDICATE A PLACEHOLDER -->
+                <!-- IGNORE THIS, WAS JUST TO INDICATE A PLACEHOLDER -->
+                <!-- IGNORE THIS, WAS JUST TO INDICATE A PLACEHOLDER -->
+
+        </div>
+
+            
+            <!-- Type Chat & Buttom -->        
+
+            <div class="form-section-wrapper">
+                <form action="" class="send-message">
+                    <input type="text" id="sendmessage1"  placeholder="Your Message...">
+                    <button type="submit" >Send</button>
+                </form>
+    
+                <form action="" class="set-username">
+                    <input type="text" id="setusername1" placeholder="Username">
+                    <button type="submit">Set</button>
+                </form>
+            </div>
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB5pH5Y5XahZWS-pda14NYXH_cqJ-1370s",
+    authDomain: "chat-43b36.firebaseapp.com",
+    databaseURL: "https://chat-43b36.firebaseio.com",
+    projectId: "chat-43b36",
+    storageBucket: "chat-43b36.appspot.com",
+    messagingSenderId: "625967407338",
+    appId: "1:625967407338:web:4d3778020b067e1a74f793"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<script src="chat.js"></script>
+</body>
+</html>
