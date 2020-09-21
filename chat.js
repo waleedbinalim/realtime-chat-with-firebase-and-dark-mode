@@ -26,6 +26,13 @@ let trans = () => {
     }, 2000)
 }
 
+//====================================================================================
+//====================================================================================
+//====================================================================================
+//====================================================================================
+//====================================================================================
+
+
 
 //SET USERNAME___________________________________________________________________
 setUsername.addEventListener('submit' , e => {
@@ -45,15 +52,23 @@ const loadFirebaseChats = function(){
     db.collection(`${category}`).orderBy('time').onSnapshot(snapshot => {
         snapshot.docChanges().forEach(change => {
 
-            // console.log('your change index' ,change.newIndex, 'and newChange index', newChangeIndex);           
+            // console.log('your change index' ,change.newIndex, 'and newChange index', newChangeIndex);
+            
+            
             if(change.type === 'added' && change.newIndex != newChangeIndex){
-
+                    // console.log(change);
+                    //DATE FnS MAGIC
+                    let when = dateFns.distanceInWordsToNow(
+                        change.doc.data().time.toDate(),
+                        { addSuffix: true }
+                    );
                     let html = `
                     <div class="message-container">
                         <div class="name"><strong>${change.doc.data().username} :</strong></div>
                         <div class="message">
                             <p>${change.doc.data().message}</p></div>
                         <div class="time-stamp">
+                        ${when}
                         </div>
                     </div>`;
                     chats.innerHTML += html;
